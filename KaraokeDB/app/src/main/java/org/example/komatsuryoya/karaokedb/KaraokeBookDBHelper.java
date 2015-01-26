@@ -29,8 +29,8 @@ public class KaraokeBookDBHelper extends SQLiteOpenHelper {
                         + "_id  integer primary key autoincrement not null, "
                         + "song text not null, "
                         + "artist text not null, "
-                        + "range_low, "
-                        + "range_high, "
+                        + "range_low text, "
+                        + "range_high text, "
                         + "difficulty integer)" );
         // 必要なら、ここで他のテーブルを作成したり、初期データを挿入したりする
     }

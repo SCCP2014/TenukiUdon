@@ -4,5 +4,6 @@
     <string name="app_name">KaraokeDB</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="detail">詳細</string>
 
 </resources>

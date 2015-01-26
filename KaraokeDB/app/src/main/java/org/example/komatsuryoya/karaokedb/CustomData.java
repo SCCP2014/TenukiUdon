@@ -8,6 +8,7 @@ public class CustomData {
     private String songArtist_;
     private String songLowRange_;
     private String songHighRange_;
+    private String songRange_;
     private int songDifficulty_;
 
     public void setName(String text) {
@@ -40,6 +41,19 @@ public class CustomData {
 
     public String getHRange() {
         return songHighRange_;
+    }
+
+    public void setRange(){
+        StringBuffer buffer;
+        buffer = new StringBuffer();
+        buffer.append(getLRange());
+        buffer.append("-");
+        buffer.append(getHRange());
+        songRange_ = buffer.toString();
+    }
+
+    public String getRange() {
+        return songRange_;
     }
 
     public void setDifficulty(int diff) {

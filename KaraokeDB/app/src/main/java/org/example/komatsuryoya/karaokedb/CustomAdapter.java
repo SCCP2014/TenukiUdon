@@ -39,6 +39,10 @@ public class CustomAdapter extends ArrayAdapter<CustomData> {
         textView2 = (TextView)convertView.findViewById(R.id.songArtist);
         textView2.setText(item.getArtist());
 
+        TextView textView3;
+        textView3 = (TextView)convertView.findViewById(R.id.songRange);
+        textView3.setText(item.getRange());
+
         return convertView;
     }
 }

@@ -1,19 +1,65 @@
 package org.example.komatsuryoya.karaokedb;
 
+import android.app.Activity;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
+import com.j256.ormlite.android.AndroidConnectionSource;
+import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.support.ConnectionSource;
 
-public class MainActivity extends ActionBarActivity {
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends Activity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
+        ListView listView = (ListView) findViewById(R.id.list);
+        CustomData item = new CustomData();
 
+        ConnectionSource connectionSource = new AndroidConnectionSource(new KaraokeBookDBHelper(this));
+        Dao<SongInfo, Integer> dao = null;
+        try {
+            DaoManager.createDao(connectionSource, SongInfo.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+      try {
+            List<SongInfo> songs = dao.queryForAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        while () {
+            // データの作成
+            List<CustomData> objects = new ArrayList<>();
+
+            item.setName("qwerty");
+            item.setArtist("qwerty2");
+            item.setLRange("low");
+            item.setHRange("high");
+
+            objects.add(item);
+            CustomAdapter customAdapter = new CustomAdapter(this, 0, objects);
+            listView.setAdapter(customAdapter);
+        /**}*/
+    /**    try {
+            connectionSource.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -36,4 +82,5 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

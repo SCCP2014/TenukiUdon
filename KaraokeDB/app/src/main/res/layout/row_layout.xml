@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list"
     android:orientation="horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     >
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
-        android:layout_width="250dp"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         >
         <TextView
@@ -17,7 +16,6 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/sample_name"
             />
         <TextView
             android:id="@+id/songArtist"
@@ -25,18 +23,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:text="@string/sample_artist"
             />
     </LinearLayout>
 
     <TextView
         android:id="@+id/songRange"
         android:choiceMode="singleChoice"
-        android:layout_width="65dp"
-        android:layout_height="wrap_content"
-        android:text="@string/sample_range"
+        android:layout_width="45dp"
+        android:layout_height="fill_parent"
+        android:gravity="center"
         />
-    <Button android:id="@+id/button"
+    <Button android:id="@+id/view_detail"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:text="@string/detail"

@@ -5,8 +5,11 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="detail">詳細</string>
-    <string name="sample_name">Daydream cafe</string>
-    <string name="sample_artist">Various artists</string>
-    <string name="sample_range">midD-HiF</string>
+    <string name="action_add">追加</string>
+    <string name="input_song">曲名:</string>
+    <string name="input_artist">歌手:</string>
+    <string name="input_range">音域:</string>
+    <string name="input_range2">～</string>
+    <string name="input_diff">難度:</string>
 
 </resources>
